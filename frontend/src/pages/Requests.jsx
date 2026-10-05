@@ -26,7 +26,7 @@ function Requests() {
         setMessage('กำลังโหลดรายการแจ้งซ่อม...')
         try {
             const response = await fetch(
-                `http://localhost:5000/api/requests/user/${userId}`
+                `${import.meta.env.VITE_API_URL}/requests/user/${userId}`
             )
 
             const data = await response.json()

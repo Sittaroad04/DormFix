@@ -25,7 +25,7 @@ function History() {
     async function loadHistory(userId) {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/requests/user/${userId}`
+                `${import.meta.env.VITE_API_URL}/requests/user/${userId}`
             )
 
             const data = await response.json()
@@ -43,7 +43,7 @@ function History() {
             for (const request of userRequests) {
                 try {
                     const historyResponse = await fetch(
-                        `http://localhost:5000/api/requests/${request.request_id}/history`
+                        `${import.meta.env.VITE_API_URL}/requests/${request.request_id}/history`
                     )
                     const historyResult = await historyResponse.json()
                     if (historyResponse.ok) {

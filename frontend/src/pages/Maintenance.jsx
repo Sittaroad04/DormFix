@@ -38,7 +38,7 @@ function Maintenance() {
 
         try {
             const response = await fetch(
-                'http://localhost:5000/api/requests',
+                `${import.meta.env.VITE_API_URL}/requests`,
                 {
                     method: 'POST',
                     headers: {

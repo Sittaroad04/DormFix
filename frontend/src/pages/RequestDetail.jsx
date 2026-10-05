@@ -19,7 +19,7 @@ function RequestDetail() {
     async function loadRequest() {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/requests/${request_id}`
+                `${import.meta.env.VITE_API_URL}/requests/${request_id}`
             )
 
             const data = await response.json()
@@ -40,7 +40,7 @@ function RequestDetail() {
     async function loadHistory() {
         try {
             const response = await fetch(
-                `http://localhost:5000/api/requests/${request_id}/history`
+                `${import.meta.env.VITE_API_URL}/requests/${request_id}/history`
             )
 
             const data = await response.json()
