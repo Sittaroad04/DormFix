@@ -146,7 +146,7 @@ function RequestDetail() {
                         <div className="timeline-point pending"></div>
                         <div className="timeline-content">
                             <div className="timeline-title">
-                                <span>📝 ได้รับเรื่องการแจ้งซ่อม</span>
+                                <span>ได้รับเรื่องการแจ้งซ่อม</span>
                                 <span className="timeline-date">{formatDate(request.created_at)}</span>
                             </div>
                             <div className="timeline-desc">

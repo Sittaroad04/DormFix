@@ -48,15 +48,15 @@ export function getCategoryText(category) {
 export function getCategoryIcon(category) {
     switch (category) {
         case 'electric':
-            return '⚡'
+            return ''
         case 'water':
-            return '🚰'
+            return ''
         case 'air':
-            return '❄️'
+            return ''
         case 'furniture':
-            return '🪑'
+            return ''
         default:
-            return '🔧'
+            return ''
     }
 }
 

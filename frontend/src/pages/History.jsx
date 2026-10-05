@@ -68,15 +68,15 @@ function History() {
     function getHistoryStepIcon(status) {
         switch (status) {
             case 'pending':
-                return '📝'
+                return ''
             case 'in_progress':
-                return '🔧'
+                return ''
             case 'completed':
-                return '✅'
+                return ''
             case 'closed':
-                return '📦'
+                return ''
             default:
-                return '⚡'
+                return ''
         }
     }
 
@@ -120,7 +120,7 @@ function History() {
 
             {requests.length === 0 && !message && (
                 <div className="df-card" style={{ textAlign: 'center', padding: '48px 24px' }}>
-                    <div style={{ fontSize: '36px', marginBottom: '12px' }}>🕐</div>
+                    <div style={{ fontSize: '36px', marginBottom: '12px' }}></div>
                     <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>
                         ยังไม่มีประวัติการแจ้งซ่อม
                     </h3>
@@ -169,13 +169,13 @@ function History() {
                             {/* Timeline section */}
                             <div style={{ padding: '8px 0 16px' }}>
                                 <div className="timeline">
-                                    {/* Initial Step: 📝 แจ้งซ่อม */}
+                                    {/* Initial Step:  แจ้งซ่อม */}
                                     <div className="timeline-item">
                                         <div className="timeline-line"></div>
                                         <div className="timeline-point pending"></div>
                                         <div className="timeline-content">
                                             <div className="timeline-title">
-                                                <span>📝 แจ้งซ่อม</span>
+                                                <span>แจ้งซ่อม</span>
                                                 <span className="timeline-date">{formatDate(request.created_at)}</span>
                                             </div>
                                             <div className="timeline-desc">

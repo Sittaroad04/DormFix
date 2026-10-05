@@ -95,7 +95,7 @@ export default function Layout() {
                                         `sidebar-nav-item ${isActive ? 'active' : ''}`
                                     }
                                 >
-                                    <span className="nav-icon">📊</span>
+                                    <span className="nav-icon"></span>
                                     <span>Dashboard</span>
                                 </NavLink>
 
@@ -105,7 +105,7 @@ export default function Layout() {
                                         `sidebar-nav-item ${isActive ? 'active' : ''}`
                                     }
                                 >
-                                    <span className="nav-icon">📋</span>
+                                    <span className="nav-icon"></span>
                                     <span>รายการแจ้งซ่อมทั้งหมด</span>
                                 </NavLink>
                             </>
@@ -118,7 +118,7 @@ export default function Layout() {
                                         `sidebar-nav-item ${isActive ? 'active' : ''}`
                                     }
                                 >
-                                    <span className="nav-icon">📊</span>
+                                    <span className="nav-icon"></span>
                                     <span>Dashboard</span>
                                 </NavLink>
 
@@ -128,7 +128,7 @@ export default function Layout() {
                                         `sidebar-nav-item ${isActive ? 'active' : ''}`
                                     }
                                 >
-                                    <span className="nav-icon">🔧</span>
+                                    <span className="nav-icon"></span>
                                     <span>แจ้งซ่อม</span>
                                 </NavLink>
 
@@ -138,7 +138,7 @@ export default function Layout() {
                                         `sidebar-nav-item ${isActive ? 'active' : ''}`
                                     }
                                 >
-                                    <span className="nav-icon">📋</span>
+                                    <span className="nav-icon"></span>
                                     <span>รายการแจ้งซ่อม</span>
                                 </NavLink>
 
@@ -148,7 +148,7 @@ export default function Layout() {
                                         `sidebar-nav-item ${isActive ? 'active' : ''}`
                                     }
                                 >
-                                    <span className="nav-icon">🕐</span>
+                                    <span className="nav-icon"></span>
                                     <span>ประวัติการแจ้งซ่อม</span>
                                 </NavLink>
                             </>
@@ -161,7 +161,7 @@ export default function Layout() {
                             className="sidebar-nav-item"
                             style={{ width: '100%', background: 'none', textAlign: 'left', border: 'none' }}
                         >
-                            <span className="nav-icon">🚪</span>
+                            <span className="nav-icon"></span>
                             <span>ออกจากระบบ</span>
                         </button>
                     </div>

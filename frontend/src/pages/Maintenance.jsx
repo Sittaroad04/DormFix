@@ -124,11 +124,11 @@ function Maintenance() {
                             required
                         >
                             <option value="">-- กรุณาเลือกประเภทปัญหา --</option>
-                            <option value="electric">⚡ ไฟฟ้า (หลอดไฟ, ปลั๊ก, สวิตช์)</option>
-                            <option value="water">🚰 ประปา (ก๊อกน้ำ, ท่อน้ำ, ชักโครก)</option>
-                            <option value="air">❄️ เครื่องปรับอากาศ (แอร์ไม่เย็น, น้ำรั่ว)</option>
-                            <option value="furniture">🪑 เฟอร์นิเจอร์ (เตียง, ตู้, ประตู, หน้าต่าง)</option>
-                            <option value="other">🔧 อื่น ๆ</option>
+                            <option value="electric">ไฟฟ้า (หลอดไฟ, ปลั๊ก, สวิตช์)</option>
+                            <option value="water">ประปา (ก๊อกน้ำ, ท่อน้ำ, ชักโครก)</option>
+                            <option value="air">เครื่องปรับอากาศ (แอร์ไม่เย็น, น้ำรั่ว)</option>
+                            <option value="furniture">เฟอร์นิเจอร์ (เตียง, ตู้, ประตู, หน้าต่าง)</option>
+                            <option value="other">อื่น ๆ</option>
                         </select>
                     </div>
 

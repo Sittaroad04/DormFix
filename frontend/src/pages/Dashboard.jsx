@@ -70,7 +70,7 @@ function Dashboard() {
                             onClick={() => navigate('/admin/requests')}
                             style={{ padding: '12px 24px', fontSize: '15px' }}
                         >
-                            📋 รายการแจ้งซ่อมทั้งหมด
+                            รายการแจ้งซ่อมทั้งหมด
                         </button>
                     </div>
                 </div>
@@ -117,7 +117,7 @@ function Dashboard() {
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                    <div 
+                    <div
                         style={{
                             border: '1px solid var(--border-color)',
                             borderRadius: 'var(--radius-md)',
@@ -130,12 +130,12 @@ function Dashboard() {
                         onMouseEnter={(e) => e.currentTarget.style.borderColor = '#111827'}
                         onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
                     >
-                        <div style={{ fontSize: '28px', marginBottom: '8px' }}>🔧</div>
+                        <div style={{ fontSize: '28px', marginBottom: '8px' }}></div>
                         <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '4px', color: 'var(--text-main)' }}>แจ้งซ่อม</h3>
                         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>ส่งคำร้องแจ้งซ่อมสิ่งของชำรุดภายในห้อง</p>
                     </div>
 
-                    <div 
+                    <div
                         style={{
                             border: '1px solid var(--border-color)',
                             borderRadius: 'var(--radius-md)',
@@ -148,12 +148,12 @@ function Dashboard() {
                         onMouseEnter={(e) => e.currentTarget.style.borderColor = '#111827'}
                         onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
                     >
-                        <div style={{ fontSize: '28px', marginBottom: '8px' }}>📋</div>
+                        <div style={{ fontSize: '28px', marginBottom: '8px' }}></div>
                         <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '4px', color: 'var(--text-main)' }}>รายการแจ้งซ่อม</h3>
                         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>ดูสถานะรายการแจ้งซ่อมทั้งหมดของคุณ</p>
                     </div>
 
-                    <div 
+                    <div
                         style={{
                             border: '1px solid var(--border-color)',
                             borderRadius: 'var(--radius-md)',
@@ -166,7 +166,7 @@ function Dashboard() {
                         onMouseEnter={(e) => e.currentTarget.style.borderColor = '#111827'}
                         onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
                     >
-                        <div style={{ fontSize: '28px', marginBottom: '8px' }}>🕐</div>
+                        <div style={{ fontSize: '28px', marginBottom: '8px' }}></div>
                         <h3 style={{ fontSize: '16px', fontWeight: 600, marginBottom: '4px', color: 'var(--text-main)' }}>ประวัติการแจ้งซ่อม</h3>
                         <p style={{ fontSize: '13px', color: 'var(--text-muted)' }}>ดู Timeline ขั้นตอนการทำงานของช่าง</p>
                     </div>

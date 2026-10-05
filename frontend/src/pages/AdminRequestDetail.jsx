@@ -208,7 +208,7 @@ function AdminRequestDetail() {
             {/* Status Update Form Card */}
             <div className="df-card">
                 <div className="df-card-header">
-                    <h2 className="df-card-title">⚙️ อัปเดตสถานะงานซ่อม</h2>
+                    <h2 className="df-card-title">อัปเดตสถานะงานซ่อม</h2>
                     <span style={{ fontSize: '13px', color: 'var(--text-muted)' }}>
                         สถานะปัจจุบัน: <strong style={{ color: 'var(--text-main)' }}>{getStatusText(request.status)}</strong>
                     </span>
@@ -247,7 +247,7 @@ function AdminRequestDetail() {
                             className="btn btn-primary"
                             disabled={saving}
                         >
-                            {saving ? 'กำลังบันทึก...' : '💾 บันทึกการเปลี่ยนแปลง'}
+                            {saving ? 'กำลังบันทึก...' : 'บันทึกการเปลี่ยนแปลง'}
                         </button>
 
                         <button
@@ -277,7 +277,7 @@ function AdminRequestDetail() {
                         <div className="timeline-point pending"></div>
                         <div className="timeline-content">
                             <div className="timeline-title">
-                                <span>📝 ผู้พักอาศัยแจ้งซ่อมเข้าระบบ</span>
+                                <span>ผู้พักอาศัยแจ้งซ่อมเข้าระบบ</span>
                                 <span className="timeline-date">{formatDate(request.created_at)}</span>
                             </div>
                             <div className="timeline-desc">

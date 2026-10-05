@@ -79,7 +79,7 @@ function AdminRequests() {
             {/* Quick Stat Summary Cards */}
             <div className="stats-grid">
                 <div className="stat-card" style={{ cursor: 'pointer' }} onClick={() => setFilteredStatus('all')}>
-                    <div className="stat-icon">📋</div>
+                    <div className="stat-icon"></div>
                     <div>
                         <div className="stat-value">{requests.length}</div>
                         <div className="stat-label">รายการทั้งหมด</div>
@@ -151,7 +151,7 @@ function AdminRequests() {
 
             {displayedRequests.length === 0 && !message && (
                 <div className="df-card" style={{ textAlign: 'center', padding: '48px 24px' }}>
-                    <div style={{ fontSize: '36px', marginBottom: '12px' }}>✨</div>
+                    <div style={{ fontSize: '36px', marginBottom: '12px' }}></div>
                     <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>
                         ไม่มีรายการในสถานะนี้
                     </h3>
@@ -176,9 +176,9 @@ function AdminRequests() {
                                 </div>
 
                                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px', fontSize: '13px', color: 'var(--text-muted)', flexWrap: 'wrap' }}>
-                                    <span>👤 ผู้แจ้ง: <strong>{request.full_name}</strong></span>
+                                    <span>ผู้แจ้ง: <strong>{request.full_name}</strong></span>
                                     <span>•</span>
-                                    <span>🚪 ห้อง: <strong>{request.room_number}</strong></span>
+                                    <span>ห้อง: <strong>{request.room_number}</strong></span>
                                     <span>•</span>
                                     <span>{getCategoryIcon(request.category)} {getCategoryText(request.category)}</span>
                                     <span>•</span>

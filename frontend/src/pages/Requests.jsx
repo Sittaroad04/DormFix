@@ -114,7 +114,7 @@ function Requests() {
 
             {displayedRequests.length === 0 && !message && (
                 <div className="df-card" style={{ textAlign: 'center', padding: '48px 24px' }}>
-                    <div style={{ fontSize: '36px', marginBottom: '12px' }}>📋</div>
+                    <div style={{ fontSize: '36px', marginBottom: '12px' }}></div>
                     <h3 style={{ fontSize: '16px', fontWeight: 600, color: 'var(--text-main)', marginBottom: '4px' }}>
                         ไม่พบรายการแจ้งซ่อม
                     </h3>
