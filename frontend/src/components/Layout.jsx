@@ -3,6 +3,7 @@ import { NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom'
 
 export default function Layout() {
     const [user, setUser] = useState(null)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -14,6 +15,11 @@ export default function Layout() {
         }
         setUser(JSON.parse(savedUser))
     }, [navigate, location.pathname])
+
+    // Close mobile menu on route change
+    useEffect(() => {
+        setMobileMenuOpen(false)
+    }, [location.pathname])
 
     function handleLogout() {
         localStorage.removeItem('user')
@@ -40,6 +46,19 @@ export default function Layout() {
             {/* Top Header */}
             <header className="app-header">
                 <div className="brand-section">
+                    {/* Hamburger button — mobile only */}
+                    <button
+                        className="hamburger-btn"
+                        onClick={() => setMobileMenuOpen(prev => !prev)}
+                        aria-label="เปิด/ปิดเมนู"
+                    >
+                        <span className={`hamburger-icon ${mobileMenuOpen ? 'open' : ''}`}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </span>
+                    </button>
+
                     <div className="brand-logo-icon">DF</div>
                     <div>
                         <span className="brand-name">DormFix</span>
@@ -68,7 +87,7 @@ export default function Layout() {
                     </div>
 
                     <button 
-                        className="btn btn-secondary btn-sm"
+                        className="btn btn-secondary btn-sm header-logout-btn"
                         onClick={handleLogout}
                         title="ออกจากระบบ"
                     >
@@ -77,10 +96,18 @@ export default function Layout() {
                 </div>
             </header>
 
+            {/* Mobile overlay */}
+            {mobileMenuOpen && (
+                <div
+                    className="sidebar-overlay"
+                    onClick={() => setMobileMenuOpen(false)}
+                />
+            )}
+
             {/* Main Body */}
             <div className="app-body">
                 {/* Sidebar */}
-                <aside className="app-sidebar">
+                <aside className={`app-sidebar ${mobileMenuOpen ? 'mobile-open' : ''}`}>
                     <div className="sidebar-menu">
                         <div className="sidebar-menu-title">
                             {isAdmin ? 'เมนูผู้ดูแลระบบ' : 'เมนูหลัก'}
