@@ -8,6 +8,8 @@ function Maintenance() {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [priority, setPriority] = useState('medium')
+    const [preferredDate, setPreferredDate] = useState('')
+    const [preferredTime, setPreferredTime] = useState('')
     const [message, setMessage] = useState('')
     const [isSubmitting, setIsSubmitting] = useState(false)
 
@@ -51,7 +53,12 @@ function Maintenance() {
                         title,
                         description,
                         image_url: null,
-                        priority
+                        priority,
+                        preferred_datetime: preferredDate && preferredTime
+                            ? `${preferredDate}T${preferredTime}`
+                            : preferredDate
+                                ? `${preferredDate}T09:00`
+                                : null
                     })
                 }
             )
@@ -71,6 +78,8 @@ function Maintenance() {
             setTitle('')
             setDescription('')
             setPriority('medium')
+            setPreferredDate('')
+            setPreferredTime('')
             setIsSubmitting(false)
 
             setTimeout(() => {
@@ -92,7 +101,7 @@ function Maintenance() {
                     <p className="page-subtitle">ส่งคำร้องแจ้งซ่อมอุปกรณ์ชำรุดในห้องพักของคุณ</p>
                 </div>
 
-                <button 
+                <button
                     className="btn btn-secondary"
                     onClick={() => navigate('/requests')}
                 >
@@ -168,6 +177,42 @@ function Maintenance() {
                             <option value="high">สูง (เร่งด่วน)</option>
                             <option value="urgent">ด่วนมาก (ฉุกเฉิน)</option>
                         </select>
+                    </div>
+
+                    <div className="form-group">
+                        <label className="form-label">
+                            📅 วัน/เวลาที่สะดวกให้ช่างเข้าซ่อม{' '}
+                            <span style={{ fontSize: '12px', color: 'var(--text-muted)', fontWeight: 400 }}>(ไม่บังคับ)</span>
+                        </label>
+                        <div style={{ display: 'flex', gap: '12px' }}>
+                            <div style={{ flex: 1 }}>
+                                <label style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>วันที่</label>
+                                <input
+                                    type="date"
+                                    className="form-input"
+                                    value={preferredDate}
+                                    onChange={(e) => setPreferredDate(e.target.value)}
+                                    min={new Date().toISOString().slice(0, 10)}
+                                />
+                            </div>
+                            <div style={{ flex: 1 }}>
+                                <label style={{ fontSize: '12px', color: 'var(--text-muted)', display: 'block', marginBottom: '4px' }}>เวลา</label>
+                                <input
+                                    type="time"
+                                    className="form-input"
+                                    value={preferredTime}
+                                    onChange={(e) => setPreferredTime(e.target.value)}
+                                />
+                            </div>
+                        </div>
+                        {preferredDate && (
+                            <p style={{ fontSize: '12px', color: 'var(--status-progress-text)', marginTop: '6px' }}>
+                                ✅ สะดวกวันที่: {new Date(preferredDate + 'T00:00').toLocaleDateString('th-TH', {
+                                    weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+                                })}
+                                {preferredTime ? ` เวลา ${preferredTime} น.` : ' (ยังไม่ได้ระบุเวลา)'}
+                            </p>
+                        )}
                     </div>
 
                     <div style={{ display: 'flex', gap: '12px', marginTop: '24px' }}>

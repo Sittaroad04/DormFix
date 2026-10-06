@@ -128,6 +128,36 @@ function RequestDetail() {
                         {request.description}
                     </p>
                 </div>
+
+                {request.preferred_datetime && (
+                    <div style={{
+                        marginTop: '16px',
+                        padding: '12px 16px',
+                        background: 'linear-gradient(135deg, #EFF6FF 0%, #F0FDF4 100%)',
+                        border: '1.5px solid #93C5FD',
+                        borderRadius: 'var(--radius-md)',
+                        display: 'flex',
+                        alignItems: 'flex-start',
+                        gap: '10px'
+                    }}>
+                        <span style={{ fontSize: '20px', lineHeight: 1 }}>📅</span>
+                        <div>
+                            <span style={{ fontSize: '12px', fontWeight: 600, color: '#1D4ED8', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                วัน/เวลาที่คุณแจ้งว่าสะดวก
+                            </span>
+                            <p style={{ fontSize: '14px', fontWeight: 600, color: '#1E40AF', marginTop: '2px' }}>
+                                {new Date(request.preferred_datetime).toLocaleString('th-TH', {
+                                    weekday: 'long',
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric',
+                                    hour: '2-digit',
+                                    minute: '2-digit'
+                                })}
+                            </p>
+                        </div>
+                    </div>
+                )}
             </div>
 
             {/* Timeline Card */}

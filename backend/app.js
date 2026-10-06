@@ -244,6 +244,7 @@ app.get('/api/requests', async (req, res) => {
                     r.image_url,
                     r.priority,
                     r.status,
+                    r.preferred_datetime,
                     r.created_at,
                     r.updated_at
                 FROM maintenance_requests r
@@ -275,7 +276,8 @@ app.post('/api/requests', async (req, res) => {
             title,
             description,
             image_url = null,
-            priority = 'medium'
+            priority = 'medium',
+            preferred_datetime = null
         } = req.body
 
         if (
@@ -319,6 +321,7 @@ app.post('/api/requests', async (req, res) => {
             .input('description', description)
             .input('image_url', image_url)
             .input('priority', priority)
+            .input('preferred_datetime', preferred_datetime)
             .query(`
                 INSERT INTO maintenance_requests (
                     user_id,
@@ -327,7 +330,8 @@ app.post('/api/requests', async (req, res) => {
                     title,
                     description,
                     image_url,
-                    priority
+                    priority,
+                    preferred_datetime
                 )
                 OUTPUT
                     INSERTED.request_id,
@@ -339,6 +343,7 @@ app.post('/api/requests', async (req, res) => {
                     INSERTED.image_url,
                     INSERTED.priority,
                     INSERTED.status,
+                    INSERTED.preferred_datetime,
                     INSERTED.created_at,
                     INSERTED.updated_at
                 VALUES (
@@ -348,7 +353,8 @@ app.post('/api/requests', async (req, res) => {
                     @title,
                     @description,
                     @image_url,
-                    @priority
+                    @priority,
+                    @preferred_datetime
                 )
             `)
 
@@ -389,6 +395,7 @@ app.get('/api/requests/user/:user_id', async (req, res) => {
                     r.image_url,
                     r.priority,
                     r.status,
+                    r.preferred_datetime,
                     r.created_at,
                     r.updated_at
                 FROM maintenance_requests r
@@ -575,6 +582,7 @@ app.get('/api/requests/:request_id', async (req, res) => {
                     r.image_url,
                     r.priority,
                     r.status,
+                    r.preferred_datetime,
                     r.created_at,
                     r.updated_at
                 FROM maintenance_requests r
