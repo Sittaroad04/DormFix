@@ -55,9 +55,9 @@ function Maintenance() {
                         image_url: null,
                         priority,
                         preferred_datetime: preferredDate && preferredTime
-                            ? `${preferredDate}T${preferredTime}`
+                            ? `${preferredDate}T${preferredTime}:00`
                             : preferredDate
-                                ? `${preferredDate}T09:00`
+                                ? `${preferredDate}T09:00:00`
                                 : null
                     })
                 }

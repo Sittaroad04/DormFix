@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import sql from 'mssql'
 import { getSqlPool } from './db.js'
 
 const app = express()
@@ -312,6 +313,14 @@ app.post('/api/requests', async (req, res) => {
             })
         }
 
+        let parsedPreferredDatetime = null
+        if (preferred_datetime) {
+            const dt = new Date(preferred_datetime)
+            if (!isNaN(dt.getTime())) {
+                parsedPreferredDatetime = dt
+            }
+        }
+
         const result = await pool
             .request()
             .input('user_id', user_id)
@@ -321,7 +330,7 @@ app.post('/api/requests', async (req, res) => {
             .input('description', description)
             .input('image_url', image_url)
             .input('priority', priority)
-            .input('preferred_datetime', preferred_datetime)
+            .input('preferred_datetime', sql.DateTime, parsedPreferredDatetime)
             .query(`
                 INSERT INTO maintenance_requests (
                     user_id,
